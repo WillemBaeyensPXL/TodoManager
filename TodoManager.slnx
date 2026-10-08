@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="TodoManager.Application.Tests/TodoManager.Application.Tests.csproj" Id="2a1d20a6-4534-446d-b118-27bfda160b21" />
+  <Project Path="TodoManager.Application/TodoManager.Application.csproj" />
+  <Project Path="TodoManager.Domain.Tests/TodoManager.Domain.Tests.csproj" Id="fe39c986-c466-4f11-9f2d-e27646919c4e" />
+  <Project Path="TodoManager.Domain/TodoManager.Domain.csproj" />
+  <Project Path="TodoManager.Infrastructure/TodoManager.Infrastructure.csproj" />
+  <Project Path="TodoManager.UI/TodoManager.WPF.csproj" />
+</Solution>
