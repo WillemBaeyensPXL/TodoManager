@@ -15,6 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TodoManager.Application\TodoManager.Application.csproj" />
+    <ProjectReference Include="..\TodoManager.Domain\TodoManager.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
