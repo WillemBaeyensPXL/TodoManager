@@ -22,11 +22,9 @@ namespace TodoManager.Application.Services
 
         public void AddTodo(string title, string? description, DateTime dueDate)
         {
-            TodoItem? duplicate = _repository.GetAll().Find(todo => todo.Title.Equals(title.Trim(), StringComparison.OrdinalIgnoreCase));
+            TodoItem? duplicate = _repository.GetAll().Find(todo => todo.Title.Trim().Equals(title.Trim(), StringComparison.OrdinalIgnoreCase));
             if(duplicate != null)
-            {
                 throw new InvalidOperationException();
-            }
 
             TodoItem todo = new TodoItem(title, description, dueDate);
             _repository.Add(todo);
@@ -34,7 +32,9 @@ namespace TodoManager.Application.Services
 
         public void CompleteTodo(TodoItem todo)
         {
-            _repository.Get(todo.Id).MarkAsCompleted();
+            TodoItem toBeCompleted = _repository.Get(todo.Id);
+            if (toBeCompleted is null) return;
+            toBeCompleted.MarkAsCompleted();
         }
 
         public void DeleteTodo(TodoItem todo)

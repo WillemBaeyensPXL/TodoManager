@@ -78,10 +78,7 @@ namespace TodoManager.WPF
             {
                 return;
             }
-
-            // TODO: try-catch
-            // TODO: _todoService.AddTodo(addWindow.TodoTitle, addWindow.TodoDescription, addWindow.TodoDueDate);
-            // TODO: RefreshTodos();
+g
             try
             {
                 _todoService.AddTodo(addWindow.TodoTitle, addWindow.TodoDescription, addWindow.TodoDueDate);
