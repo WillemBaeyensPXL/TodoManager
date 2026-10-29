@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace TodoManager.Domain.Models
 {
@@ -19,7 +20,17 @@ namespace TodoManager.Domain.Models
 
             IsCompleted = false;
             CompletedAt = null;
+        }
 
+        [JsonConstructor]
+        public TodoItem(int id, string title, string? description, DateTime dueDate, bool isCompleted, DateTime? completedAt)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+            DueDate = dueDate;
+            IsCompleted = isCompleted;
+            CompletedAt = completedAt;
         }
 
         public void MarkAsCompleted()

@@ -8,11 +8,11 @@ namespace TodoManager.Application.Services
 {
     public class TodoService
     {
-        private readonly TodoRepository _repository;
+        private readonly JsonTodoRepository _repository;
 
         public TodoService()
         {
-            _repository = new TodoRepository();
+            _repository = new JsonTodoRepository();
         }
 
         public List<TodoItem> GetTodos()
@@ -32,9 +32,8 @@ namespace TodoManager.Application.Services
 
         public void CompleteTodo(TodoItem todo)
         {
-            TodoItem toBeCompleted = _repository.Get(todo.Id);
-            if (toBeCompleted is null) return;
-            toBeCompleted.MarkAsCompleted();
+            todo.MarkAsCompleted();
+           _repository.Update(todo);
         }
 
         public void DeleteTodo(TodoItem todo)

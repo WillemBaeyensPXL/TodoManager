@@ -78,7 +78,7 @@ namespace TodoManager.WPF
             {
                 return;
             }
-g
+
             try
             {
                 _todoService.AddTodo(addWindow.TodoTitle, addWindow.TodoDescription, addWindow.TodoDueDate);
